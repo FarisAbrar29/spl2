@@ -1,0 +1,243 @@
+/* ==================================================== */
+/* ---------- POPUP NAVBAR (popup.css) ----------------- */
+/* Modal yang muncul saat tombol di navbar diklik.      */
+/* Memakai variabel warna & radius yang sama dengan     */
+/* style.css supaya tampilannya menyatu dengan web.     */
+/* ==================================================== */
+
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(15,27,35,0.55);
+  backdrop-filter:blur(4px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  z-index:100;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .18s ease;
+}
+.modal-overlay.open{
+  opacity:1;
+  pointer-events:auto;
+}
+.modal-box{
+  background:var(--panel);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  width:min(520px, 100%);
+  max-height:min(640px, 86vh);
+  overflow-y:auto;
+  padding:34px 32px 30px;
+  position:relative;
+  transform:translateY(14px) scale(.98);
+  transition:transform .2s ease;
+}
+.modal-overlay.open .modal-box{
+  transform:translateY(0) scale(1);
+}
+.modal-close{
+  position:absolute;
+  top:18px; right:18px;
+  width:34px; height:34px;
+  border-radius:50%;
+  border:1.5px solid var(--line);
+  background:var(--panel);
+  color:var(--ink);
+  font-size:20px;
+  line-height:1;
+  cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+.modal-close:hover{border-color:var(--ink);}
+
+.modal-content h3{
+  font-size:23px;
+  padding-right:34px;
+  margin-bottom:6px;
+}
+.modal-kicker{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12.5px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--aqua-deep);
+  margin:0 0 10px;
+}
+.modal-content p.modal-desc{
+  color:var(--ink-soft);
+  font-size:14.5px;
+  margin:0 0 22px;
+}
+
+/* Tombol aksi di dalam modal */
+.modal-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+.modal-btn{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  font-size:14px;
+  padding:11px 20px;
+  border-radius:100px;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.modal-btn.primary{background:var(--sun); color:var(--ink);}
+.modal-btn.primary:hover{background:#e0a821;}
+.modal-btn.ghost{background:transparent; color:var(--ink); border:1.5px solid var(--line);}
+.modal-btn.ghost:hover{border-color:var(--ink);}
+
+/* Daftar langkah ringkas (Cara Kerja) */
+.modal-steps{
+  list-style:none; margin:0; padding:0;
+  display:flex; flex-direction:column; gap:14px;
+}
+.modal-steps li{
+  display:flex; gap:14px; align-items:flex-start;
+}
+.modal-steps .num{
+  flex:none;
+  width:26px; height:26px;
+  border-radius:7px;
+  background:var(--ink);
+  color:#fff;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px; font-weight:600;
+  display:flex; align-items:center; justify-content:center;
+}
+.modal-steps strong{display:block; font-size:14.5px;}
+.modal-steps span{font-size:13.5px; color:var(--ink-soft);}
+
+/* Preview produk (Produk) */
+.modal-produk-list{
+  list-style:none; margin:0 0 6px; padding:0;
+  display:flex; flex-direction:column; gap:10px;
+}
+.modal-produk-list li{
+  display:flex; justify-content:space-between; align-items:center;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:12px 16px;
+}
+.modal-produk-list .nama{font-size:14.5px; font-weight:600;}
+.modal-produk-list .harga{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13.5px;
+  color:var(--aqua-deep);
+}
+
+/* Mini kalkulator (Estimasi Harga) */
+.modal-calc-field{margin-bottom:14px;}
+.modal-calc-field label{
+  display:block;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  letter-spacing:0.04em;
+  color:var(--ink-soft);
+  margin-bottom:6px;
+}
+.modal-calc-field select, .modal-calc-field input[type="number"]{
+  width:100%;
+  border:1.5px solid var(--line);
+  border-radius:12px;
+  padding:12px 14px;
+  font-family:'Inter',sans-serif;
+  font-size:14.5px;
+  color:var(--ink);
+  background:#fff;
+}
+.modal-calc-field select:focus, .modal-calc-field input:focus{border-color:var(--aqua-deep);}
+.modal-readout{
+  background:var(--ink);
+  color:#fff;
+  border-radius:16px;
+  padding:18px 20px;
+  display:flex; flex-direction:column; gap:2px;
+  margin-top:4px;
+}
+.modal-readout .label{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#7FB8BE;
+}
+.modal-readout .amount{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:26px; font-weight:600;
+}
+.modal-readout .sub{font-size:12px; color:#8AA0AC;}
+
+/* Mini tracker (Lacak Pesanan) */
+.modal-tracker{
+  display:flex; justify-content:space-between;
+  position:relative;
+  margin:6px 0 4px;
+}
+.modal-tracker::before{
+  content:"";
+  position:absolute; top:16px; left:5%; right:5%; height:3px;
+  background:var(--line); z-index:0; border-radius:4px;
+}
+.modal-tnode{
+  position:relative; z-index:1;
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  flex:1; text-align:center;
+  background:none; border:none; cursor:pointer; font-family:inherit;
+}
+.modal-tnode .tdot{
+  width:32px; height:32px; border-radius:50%;
+  background:#fff; border:3px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-soft);
+}
+.modal-tnode.active .tdot{border-color:var(--aqua-deep); background:var(--aqua); color:#fff;}
+.modal-tnode.done .tdot{border-color:var(--aqua-deep); background:var(--aqua-deep); color:#fff;}
+.modal-tnode span.tlabel{font-size:12.5px; font-weight:600;}
+.modal-track-hint{
+  font-size:13px; color:var(--ink-soft);
+  border:1px dashed var(--line); border-radius:12px;
+  padding:12px 14px; margin-top:16px;
+}
+
+/* Roadmap */
+.modal-roadmap{
+  list-style:none; margin:0; padding:0;
+  border-left:2px dashed var(--line);
+}
+.modal-roadmap li{
+  position:relative;
+  padding:2px 0 20px 22px;
+}
+.modal-roadmap li:last-child{padding-bottom:2px;}
+.modal-roadmap li::before{
+  content:"";
+  position:absolute; left:-7px; top:3px;
+  width:12px; height:12px; border-radius:50%;
+  background:var(--panel); border:2.5px solid var(--line);
+}
+.modal-roadmap li.aktif::before{border-color:var(--aqua-deep); background:var(--aqua);}
+.modal-roadmap .fase{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11.5px; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--aqua-deep); margin-bottom:3px;
+}
+.modal-roadmap .status{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:10.5px;
+  color:var(--ink-soft);
+  margin-left:8px;
+}
+.modal-roadmap strong{display:block; font-size:14.5px; margin-bottom:3px;}
+.modal-roadmap p{margin:0; font-size:13.5px; color:var(--ink-soft);}
+
+@media (max-width:520px){
+  .modal-box{padding:28px 20px 24px;}
+}
