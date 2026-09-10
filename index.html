@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bersih &mdash; Sistem Pemesanan Laundry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>BARASIAH</a>
+    <div class="nav-links">
+      <a href="#cara-kerja">Cara Kerja</a>
+      <a href="produk.html">Produk</a>
+      <a href="#kalkulator">Estimasi Harga</a>
+      <a href="#status">Lacak Pesanan</a>
+    </div>
+
+  </div>
+</nav>
+
+<header class="wrap hero">
+  <div>
+    <p class="eyebrow">Sistem Pemesanan Laundry</p>
+    <h1>Cucian beres,<br><em>tanpa</em> drama antar.</h1>
+    <p class="lead">Pilih layanan, timbang pakaianmu, dan lihat langsung estimasi harganya &mdash; sebelum pesanan diproses sampai selesai.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="#kalkulator">Hitung Estimasi Harga</a>
+      <a class="btn-ghost" href="#cara-kerja">Lihat Cara Kerja</a>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="porthole">
+      <div class="drum">
+        <svg class="cloth c1" viewBox="0 0 24 24" fill="none"><path d="M8 3L4 6v3h3v11h10V9h3V6l-4-3-3 2h-2L8 3z" fill="#F0B429"/></svg>
+        <svg class="cloth c2" viewBox="0 0 24 24" fill="none"><rect x="6" y="3" width="12" height="18" rx="4" fill="#A78BC9"/></svg>
+        <svg class="cloth c3" viewBox="0 0 24 24" fill="none"><path d="M6 3h12l1 8h-4l-1-4-1 4-1 9H9l-1-9-1-4-1 4H2L6 3z" fill="#2F98A3"/></svg>
+        <svg class="cloth c4" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" fill="#F4F8F7" stroke="#1F2E3D" stroke-width="1.5"/></svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="cara-kerja">
+    <div class="wrap">
+      <p class="eyebrow">Alur Pesanan</p>
+      <h2 style="font-size:32px;">Empat langkah, dari keranjang sampai selesai</h2>
+      <div class="line-wrap">
+        <div class="clothesline" aria-hidden="true"></div>
+        <div class="steps">
+          <div class="step"><div class="peg">1</div><h3>Pilih layanan</h3><p>Cuci kering, cuci setrika, atau express &mdash; sesuaikan dengan kebutuhanmu.</p></div>
+          <div class="step"><div class="peg">2</div><h3>Masukkan berat</h3><p>Timbang pakaian dan masukkan beratnya dalam kilogram.</p></div>
+          <div class="step"><div class="peg">3</div><h3>Lihat estimasi harga</h3><p>Total harga terhitung otomatis, tidak ada biaya tersembunyi.</p></div>
+          <div class="step"><div class="peg">4</div><h3>Pantau statusnya</h3><p>Ikuti progres dari Diproses, Dicuci, sampai Selesai.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="layanan" style="background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <p class="eyebrow">Langkah 1</p>
+      <h2 style="font-size:32px;">Pilih jenis layanan</h2>
+      <div class="service-grid" role="radiogroup" aria-label="Pilih jenis layanan">
+        <label class="service-card" data-price="7000">
+          <input type="radio" name="layanan" value="7000" data-name="Cuci Kering">
+          <span class="tag">Standar</span>
+          <h3>Cuci Kering</h3>
+          <p>Dicuci &amp; dikeringkan, siap dilipat sendiri di rumah.</p>
+          <div class="price mono">Rp7.000<span style="font-size:13px; font-weight:400; color:var(--ink-soft);">/kg</span></div>
+        </label>
+        <label class="service-card" data-price="10000">
+          <input type="radio" name="layanan" value="10000" data-name="Cuci Setrika">
+          <span class="tag">Populer</span>
+          <h3>Cuci Setrika</h3>
+          <p>Dicuci, dikeringkan, dan disetrika rapi &mdash; tinggal simpan di lemari.</p>
+          <div class="price mono">Rp10.000<span style="font-size:13px; font-weight:400; color:var(--ink-soft);">/kg</span></div>
+        </label>
+        <label class="service-card" data-price="15000">
+          <input type="radio" name="layanan" value="15000" data-name="Express">
+          <span class="tag">6 Jam Selesai</span>
+          <h3>Express</h3>
+          <p>Untuk yang buru-buru &mdash; selesai hari yang sama.</p>
+          <div class="price mono">Rp15.000<span style="font-size:13px; font-weight:400; color:var(--ink-soft);">/kg</span></div>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section id="kalkulator">
+    <div class="wrap">
+      <p class="eyebrow">Langkah 2 &amp; 3</p>
+      <h2 style="font-size:32px;">Masukkan berat, lihat total otomatis</h2>
+      <div class="calc-panel">
+        <div class="calc-form">
+          <div class="calc-field">
+            <label for="beratInput">Berat pakaian (kg)</label>
+            <input type="number" id="beratInput" min="0" step="0.5" placeholder="Contoh: 3.5">
+          </div>
+          <div class="calc-field">
+            <label for="layananSelect">Layanan terpilih</label>
+            <select id="layananSelect">
+              <option value="7000" data-name="Cuci Kering">Cuci Kering &mdash; Rp7.000/kg</option>
+              <option value="10000" data-name="Cuci Setrika">Cuci Setrika &mdash; Rp10.000/kg</option>
+              <option value="15000" data-name="Express">Express &mdash; Rp15.000/kg</option>
+            </select>
+          </div>
+          <p style="color:#9BB0BB; font-size:13.5px; margin:0;">Estimasi ini dihitung otomatis dari harga per kilogram dikali berat pakaian yang kamu masukkan.</p>
+        </div>
+        <div class="readout">
+          <span class="label">Estimasi Total</span>
+          <span class="amount" id="hasilHarga">Rp0</span>
+          <span class="sub" id="hasilDetail">isi berat untuk mulai</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="status" style="background:var(--panel); border-top:1px solid var(--line);">
+    <div class="wrap">
+      <p class="eyebrow">Langkah 4</p>
+      <h2 style="font-size:32px;">Lacak status pesanan</h2>
+      <p style="color:var(--ink-soft); max-width:56ch;">Contoh tampilan status &mdash; klik tiap tahap untuk melihat bagaimana progres pesanan akan terlihat di halaman riwayat.</p>
+      <div class="tracker">
+        <div class="tracker-row" id="trackerRow">
+          <button class="tnode active" data-step="0">
+            <span class="tdot"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M4 8l8-4 8 4v9l-8 4-8-4V8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 8l8 4 8-4M12 12v9" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <span class="tlabel">Diproses</span><span class="thint">Pesanan diterima</span>
+          </button>
+          <button class="tnode" data-step="1">
+            <span class="tdot"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><circle cx="8" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/><circle cx="15" cy="7" r="1.6" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="14" r="2.8" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            <span class="tlabel">Dicuci</span><span class="thint">Sedang dikerjakan</span>
+          </button>
+          <button class="tnode" data-step="2">
+            <span class="tdot"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M5 13l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="tlabel">Selesai</span><span class="thint">Siap diambil</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 BARASIAH &mdash; Sistem Pemesanan Laundry</span>
+    <span class="footer-note">Kelompok 4 Punya &middot; masih baraja</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

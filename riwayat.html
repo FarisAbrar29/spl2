@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riwayat Pesanan &mdash; BARASIAH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>BARASIAH</a>
+    <div class="nav-links">
+      <a href="index.html#cara-kerja">Cara Kerja</a>
+      <a href="produk.html">Produk</a>
+      <a href="index.html#kalkulator">Estimasi Harga</a>
+      <a href="riwayat.html" class="active">Riwayat</a>
+    </div>
+  </div>
+</nav>
+
+<header class="wrap page-head">
+  <p class="eyebrow">Riwayat Tersimpan</p>
+  <h1>Riwayat Pesanan</h1>
+  <p>Semua pesanan yang kamu simpan lewat popup di halaman Produk muncul di sini &mdash; tersimpan di browser ini saja (belum ke server/database).</p>
+</header>
+
+<main class="wrap">
+  <div class="riwayat-panel">
+    <table class="riwayat" id="riwayatTable">
+      <thead>
+        <tr>
+          <th>Layanan</th><th>Berat</th><th>Total</th><th>Catatan</th><th>Disimpan</th>
+        </tr>
+      </thead>
+      <tbody id="riwayatBody"></tbody>
+    </table>
+    <div class="empty-state" id="riwayatEmpty" style="display:none;">
+      Belum ada pesanan tersimpan. <a href="produk.html">Pilih layanan di halaman Produk &rarr;</a>
+    </div>
+  </div>
+  <button type="button" class="clear-btn" id="clearBtn">Hapus semua riwayat</button>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 BARASIAH &mdash; Sistem Pemesanan Laundry</span>
+    <span class="mono">Kelompok 4 Punya &middot; masih baraja</span>
+  </div>
+</footer>
+
+<script src="assets/produk-data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
